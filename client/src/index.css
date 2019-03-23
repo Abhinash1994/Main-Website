@@ -15,16 +15,19 @@ code {
     monospace;
 }
 .bg-light{
+  padding:0px;
+  margin-top: 11%;
 	background: #b71c1c !important;
 	max-height: 100px !important;
 	box-shadow: 0px 1px 1px #7b7b7b;
-    border: none !important;
-    position: sticky !important;
+  border: none !important;
+  position: sticky !important;
   top:0;
   color:#fff;
 }
 #navbarNav{
   margin-left: 16%;
+  background: #bd0303;
 }
 .navbar-light .navbar-nav .nav-link{
   color: #fff;
@@ -32,4 +35,266 @@ code {
 }
 .navbar-light .navbar-nav .nav-link:hover{
   color:yellow;
+}
+.header{
+    margin-left: 30px;
+    margin-right: 30px;
+    
+}
+.socialmessage{
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top:-10px;
+  border-top: 1px solid burlywood;
+  border-bottom: 1px  solid burlywood;
+}
+.socialmessage ul li{
+  list-style:none;
+  display: inline;
+  padding-left: 10px;
+}
+.socialmessage ul{
+  margin-left: -45px;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.bigInt {
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-shadow: 0 1px 0 white;
+  font-size: 17px;
+  color: #1e1e1e;
+  line-height: 26px;
+  font-family: 'Open Sans',sans-serif,Helvetica,Arial;
+  text-align: justify;
+}
+.bec650{
+  border: 1px solid #CCC;
+  padding: 9px;
+  background: #fff;
+  width: 93%;
+  margin-top:10px;
+  margin-left: 30px;
+
+}
+.face {
+  float: left;
+  border-right: solid 1px #dedede;
+  border-bottom: solid 1px #dedede;
+  padding: 4px;
+  background-color: #fff;
+  margin-right: 11px;
+  width: 100px;
+  margin-left: 20px;
+}
+.aboutme h5{
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.aboutme h6{
+  line-height: 9px;
+  font-family: 'Open Sans',sans-serif,Helvetica,Arial;
+  text-align: justify;
+}
+.profileSide .widget {
+  display: inline-block;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 6px;
+  margin-left: 20px;
+  margin-right: 10px;
+  
+  
+}
+.profileSide .btn {
+  background-color: #eff3f6;
+  background-image: -webkit-linear-gradient(top, #fafbfc, #e4ebf0);
+  background-image: -moz-linear-gradient(top, #fafbfc, #e4ebf0);
+  background-image: linear-gradient(to bottom, #fafbfc, #e4ebf0);
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFBFC', endColorstr='#FFE4EBF0')";
+  *filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFAFBFC', endColorstr='#FFE4EBF0');
+  font-weight: 600;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #dad8d8;
+  box-shadow:         inset 0 0 10px #dad8d8;
+ 
+}
+.subscribe{
+  border-top:1px solid  burlywood;
+  width: 90%;
+  margin-left: 20px;
+  margin-top:20px;
+
+}
+.widget-title {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 30px;
+  background-color: #161619;
+  margin: 6px 0 20px;
+  margin-top:20px;
+}
+.widget-title > h3 {
+  position: relative;
+  float: left;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #de0606;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.linkdin{
+  background-color: #0073b1!important;
+  color:#fff;
+ padding-left: 10px;
+ padding-right: 10px;
+}
+.widget-title > h3:after {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  bottom: 0;
+  right: -15px;
+  border-top: 30px solid transparent;
+  border-left: 15px solid #e51515;
+  border-right: 0 solid #e51515;
+  border-bottom: 0;
+}
+.subscriberbyemail{
+  margin-left: 5px;
+  background: #de0606;
+  color:#fff;
+  border:none;
+  padding: 4px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.widget-content ul li{
+  list-style: none;
+  display: inline;
+  padding-left: 10px;
+}
+
+
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #171b1a !important;
+    margin-top: 10%;
+}
+#footer h5{
+  padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+  font-size:25px;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size:30px;
+  margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+  color:#ffffff;
+}
+#footer ul.social li a:hover{
+  color:#eeeeee;
+}
+#footer ul.quick-links li{
+  padding: 3px 0;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+  padding: 3px 0;
+  margin-left:5px;
+  font-weight:700;
+}
+#footer ul.quick-links li a i{
+  margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+.subscribe-field-blog_subscription-4{
+    width: 70%;
+    display: inline-block;
+    float: left;
+    font-family: graphikweb-regular;
+    padding: 10px 20px;
+    margin-right: 16px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 20px;
+    background: #fff;
+}
+.submitEmail{
+          background-color: #333;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 11px 8px;
+    text-decoration: none;
+    white-space: normal;
+    width: auto;
+    margin-top: 18px;
+}
+.submitEmail:hover{
+  background-color: #bd0303;
+}
+@media (max-width:767px){
+  #footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
 }

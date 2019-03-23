@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-class Home extends Component {
+class Navmenu extends Component {
   render() {
 
     return (
@@ -11,22 +11,22 @@ class Home extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a className="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Javascript</a>
+              <a className="nav-link" href="/javascript">Javascript</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Angularjs</a>
+              <a className="nav-link" href="/angular">Angularjs</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Reactjs</a>
+              <a className="nav-link" href="/react">Reactjs</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Nodejs</a>
+              <a className="nav-link" href="/node">Nodejs</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Request Tutorial</a>
+              <a className="nav-link" href="/request/tutorial">Request Tutorial</a>
             </li>
           </ul>
         </div>
@@ -35,4 +35,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Navmenu;

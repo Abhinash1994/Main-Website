@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Home from './Components/Header/index'
-
+import Navmenu from './Components/Header/nav-menu'
+import Main from './Components/Main';
+import Footer from './Components/Footer/footer'
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home />
-   
+        <Navmenu />
+         <Main className="marginTop" />
+   			  <p><Footer /></p>
       </div>
     );
   }
