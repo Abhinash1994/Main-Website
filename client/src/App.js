@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <Navmenu />
          <Main className="marginTop" />
-   			  <p><Footer /></p>
+   			  <Footer />
       </div>
     );
   }

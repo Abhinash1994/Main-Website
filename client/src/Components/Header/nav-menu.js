@@ -11,7 +11,7 @@ class Navmenu extends Component {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/javascript">Javascript</a>
@@ -27,6 +27,9 @@ class Navmenu extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/request/tutorial">Request Tutorial</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/add-post">Add Posts</a>
             </li>
           </ul>
         </div>

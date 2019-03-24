@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import { SocialIcon } from 'react-social-icons';
 import Grid from '@material-ui/core/Grid';
+import axios from 'axios';
 class Home extends Component {
+
+  state = {
+    persons: []
+  }
+  componentDidMount() {
+    axios.get('/api/blog/test')
+      .then(res => console.log("final",res))
+  }
   render() {
 
     return (
           
             <Grid container>
-                 <Grid lg={2}>
+                 <Grid item lg={2}>
                   </Grid>
                   <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={6} style={{borderRight: '1px solid #d86a6a',background:'#fff'}}>
                        <div className="header">

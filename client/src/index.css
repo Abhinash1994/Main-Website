@@ -111,7 +111,14 @@ code {
   margin-left: 20px;
   margin-right: 10px;
   
-  
+}
+.addpostwe{
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.titlewe{
+  margin:20px;
 }
 .profileSide .btn {
   background-color: #eff3f6;

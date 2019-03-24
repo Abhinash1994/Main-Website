@@ -6,6 +6,7 @@ import Javascript from '../Header/javasript'
 import Reactjs from '../Header/reactjs'
 import Nodejs from '../Header/nodejs'
 import Tutorial from '../Header/tutorial'
+import Addposts from '../Header/addPosts'
 export default class Main extends Component {
   render() { 
     return (
@@ -17,6 +18,7 @@ export default class Main extends Component {
               <Route exact path='/react' component={Reactjs}/>
               <Route exact path='/node' component={Nodejs}/>
               <Route exact path='/request/tutorial' component={Tutorial}/>
+              <Route exact path='/add-post' component={Addposts}/>
 		    </Switch>
   		</main>
     );
