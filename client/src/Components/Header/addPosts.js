@@ -52,26 +52,29 @@ class Addposts extends Component {
         
         e.preventDefault();
 
-        // const fb = new FormData();
-        // fb.append('blogImages',this.state.file);
+      const formData = new FormData();
+        formData.append('title',this.state.title);
+        formData.append('categories',this.state.categories);
+        formData.append('comment',this.state.comment);
+        formData.append('createdAt',this.state.date);
+        formData.append('blogImages',this.state.selectedFile);
+         formData.append('author',this.state.author);
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        };
 
         let instance = this;
-        const newPosts = {
-            title:this.state.title,
-            categories:this.state.categories,
-            comment:this.state.comment,
-            createdAt:this.state.date,
-            author:this.state.author,
-            blogImages:this.state.selectedFile,
-        }
-        axios.post('/api/blog/checkpost',newPosts).then(function (response) {
+        axios.post('/api/blog/checkpost',formData,config).then(function (response) {
             alert('Form Submitted, We will get in touch with you shortly!');
-            instance.setState({newPosts});
+            instance.setState({formData});
                 console.log(response)
             
           })
          .catch(function (error) {
             console.log("error");
+             alert('not Submitted, error');
           });
 
      
@@ -84,7 +87,7 @@ class Addposts extends Component {
             <Grid container spacing={24}>
                 <Grid item xs={12}>
                     <Paper className="addpostwe">
-                    <form onSubmit={this.handleSubmit} enctype="multipart/form-data">
+                    <form onSubmit={this.handleSubmit}>
                         <h1 style={{textAlign:'center',paddingTop:'20px'}}>Add Posts </h1>
                         <div className="form-group titlewe">
                             <h1 style={{paddingTop:'10px',fontSize:'20px'}}>Title : </h1>

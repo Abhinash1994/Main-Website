@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const path = require("path");
+const multer = require("multer");
+
 require('dotenv').config()
 const cloudinary = require('cloudinary');
 
@@ -26,7 +29,7 @@ router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
 		blogImages:result.secure_url,
 		author:req.body.author
 	});
-
+	console.log("final",data)
 	data.save().then((doc)=>{
 		res.send(doc);
 	},(e)=>{
