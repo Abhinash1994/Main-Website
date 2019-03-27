@@ -3,17 +3,31 @@ const Schema = mongoose.Schema;
 
 const BloggingSchema = new Schema({
 
-	name:{
+	title:{
 		type:String,
+		required:true
 		
 	},
-	paragraph:{
-		type:String
+	categories:{
+		type: String,
+		required:true
 	},
-	address:{
-		type:String
+	comment:{
+		type:String,
+		required:true
 	},
+	createdAt: { 
+		type: Date, default: Date.now,
+	},
+	// blogImages:{
+	// 	type: String,
+		
+	// },
 
+	author:{
+		type: String,
+		required:true
+	},
 })
 
 module.exports = blogData = mongoose.model('bloggingdata',BloggingSchema);

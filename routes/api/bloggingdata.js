@@ -1,5 +1,19 @@
 const express = require('express');
 const router = express.Router();
+const path = require("path");
+var multer  = require('multer');
+
+const storage = multer.diskStorage({
+	destination: function(req,file,cb){
+		cb(null,'./uploads/');
+	},
+	filename: function(req,file,cb){
+		cb(null,new Date().toString() +file.originalname);
+	}
+})
+var upload = multer({storage: storage,limits:{
+	fileSize: 1024 * 1024 * 5
+}})
 
 //load models bloggingdata
 const blogData  = require('../../models/blogData')
@@ -14,11 +28,14 @@ router.get('/test',(req,res)=>{
 	});
 });
 
-router.post('/check',(req,res)=>{
+router.post('/checkpost',upload.single('blogImages'),(req,res)=>{
 	var data = new blogData({
-		name:req.body.name,
-		paragraph:req.body.paragraph,
-		address:req.body.address
+		title:req.body.title,
+		categories:req.body.categories,
+		comment:req.body.comment,
+		createdAt:req.body.createdAt,
+		// blogImages:req.file.path,
+		author:req.body.author
 	});
 
 	data.save().then((doc)=>{
