@@ -19,10 +19,10 @@ const BloggingSchema = new Schema({
 	createdAt: { 
 		type: Date, default: Date.now,
 	},
-	// blogImages:{
-	// 	type: String,
+	blogImages:{
+		type: String,
 		
-	// },
+	},
 
 	author:{
 		type: String,

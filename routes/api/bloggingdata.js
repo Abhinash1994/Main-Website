@@ -1,23 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const path = require("path");
-var multer  = require('multer');
+require('dotenv').config()
+const cloudinary = require('cloudinary');
 
-const storage = multer.diskStorage({
-	destination: function(req,file,cb){
-		cb(null,'./uploads/');
-	},
-	filename: function(req,file,cb){
-		cb(null,new Date().toString() +file.originalname);
-	}
-})
-var upload = multer({storage: storage,limits:{
-	fileSize: 1024 * 1024 * 5
-}})
-
-//load models bloggingdata
+require('../../models/cloudinary')
 const blogData  = require('../../models/blogData')
-
+const upload  = require('../../models/multer')
 
 
 router.get('/test',(req,res)=>{
@@ -28,13 +16,14 @@ router.get('/test',(req,res)=>{
 	});
 });
 
-router.post('/checkpost',upload.single('blogImages'),(req,res)=>{
+router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
+	const result = await cloudinary.v2.uploader.upload(req.file.path);
 	var data = new blogData({
 		title:req.body.title,
 		categories:req.body.categories,
 		comment:req.body.comment,
 		createdAt:req.body.createdAt,
-		// blogImages:req.file.path,
+		blogImages:result.secure_url,
 		author:req.body.author
 	});
 

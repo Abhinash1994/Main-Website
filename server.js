@@ -1,9 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 const postdata = require('./routes/api/bloggingdata');
-
 const app = express();
 
 //body parser middleware
