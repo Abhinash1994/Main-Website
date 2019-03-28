@@ -1,39 +1,64 @@
 import React, { Component } from "react";
 import { SocialIcon } from 'react-social-icons';
 import Grid from '@material-ui/core/Grid';
+import Pagination from "react-js-pagination";
 import axios from 'axios';
 class Home extends Component {
 
   state = {
-    persons: []
+    postData: [],
+    activePage: 15
   }
   componentDidMount() {
     axios.get('/api/blog/test')
-      .then(res => console.log("final",res))
+      .then(res => {
+        this.setState({
+          isLoaded: true,
+          postData: res.data.data
+        });
+        console.log("final data",this.state.postData)
+      })
   }
+
+ 
   render() {
 
     return (
           
             <Grid container>
+ 
                  <Grid item lg={2}>
                   </Grid>
                   <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={6} style={{borderRight: '1px solid #d86a6a',background:'#fff'}}>
-                       <div className="header">
-                          <h3>Ionic Electron Desktop App</h3>
-                       </div>
-                      <div className="socialmessage">
-                            <ul>
-                              <li className="message"><img src="./Images/comment.png"/></li>
-                              <li>10 comments - Abhinash kumar</li>
-                              <li><span className="linkdin">share</span></li>
-                              <li>twiter</li>
-                            </ul>
-                      </div>
-                      <div className="bigInt" itemprop="description">Ionic has an excellent Angular framework for creating mobile applications for iOS and Android. Ionic team is planning to launch an update with Angular 6.0 version, right now Ionic 4.0 is in beta development. This post is about using ElectronJS for JavaScript based applications, using this you can convert an application into a Desktop application for MacOS, Windows and Linux. Take a look at this article and follow the steps to generate a desktop application for Ionic. </div>
+                          
+                        {this.state.postData.map(function(item, index) {
+                               return (
 
-                      <div className="cen"><img alt="Angular  Route Guards with Child Components " className="bec650" itemprop="image" src="https://github.com/srinivastamada/9lessonsImages/blob/master/ionic/ionic-desktop.png?raw=true"/>
-                      </div>
+
+                                             <div className="header" key={index}>
+                                                <h3>{item.title}</h3>
+                                                  <div className="socialmessage">
+                                                      <ul>
+                                                        <li className="message"><img src="./Images/comment.png"/></li>
+                                                        <li>10 comments - Abhinash kumar</li>
+                                                        <li><span className="linkdin">share</span></li>
+                                                        <li>twiter</li>
+                                                      </ul>
+                                                  </div>
+
+
+                                                    <div className="bigInt" itemprop="description">
+                                                      {item.comment}
+                                                    </div>
+                                                    <div className="cen">
+                                                      <img alt="Angular  Route Guards with Child Components " className="bec650" itemprop="image" src={item.blogImages}/>
+                                                    </div>
+                                              </div>
+                                            )
+                                         })
+                                      }
+
+
                   </Grid>
 
                   <Grid className="profileSide" item xs={12} sm={12} md={4} lg={4}>
