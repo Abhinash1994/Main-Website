@@ -116,7 +116,7 @@ class Addposts extends Component {
                         <div className="form-group titlewe">
                             <h1  style={{paddingTop:'10px',fontSize:'20px'}}>Images : </h1>
                             <input type="file" className="form-control-file" name="blogImages"
-                            onChange={this.fileSelectedHandler}/>
+                            onChange={this.fileSelectedHandler} multiple/>
                         </div>
                         <div className="form-group titlewe">
                             <h1 style={{paddingTop:'10px',fontSize:'20px'}}>Select Date : </h1>

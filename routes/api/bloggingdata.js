@@ -19,7 +19,7 @@ router.get('/test',(req,res)=>{
 	});
 });
 
-router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
+router.post('/checkpost',upload.array('blogImages',12), async (req,res)=>{
 	const result = await cloudinary.v2.uploader.upload(req.file.path);
 	var data = new blogData({
 		title:req.body.title,
