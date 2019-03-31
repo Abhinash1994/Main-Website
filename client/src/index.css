@@ -14,6 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.homecontainer{
+  margin-top: 3%;
+}
 .bg-light{
   padding:0px;
   margin-top: 11%;
@@ -96,8 +99,9 @@ code {
   line-height: 9px;
   font-family: 'Open Sans',sans-serif,Helvetica,Arial;
   text-align: justify;
+  font-size: 15px;
 }
-.profileSide .widget {
+/*.profileSide .widget {
   display: inline-block;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -111,11 +115,19 @@ code {
   margin-left: 20px;
   margin-right: 10px;
   
+}*/
+.typeEmail{
+  margin-left: 13%;
 }
 .addpostwe{
   margin-top: 5%;
   margin-left: 20%;
   margin-right: 20%;
+}
+.header .titled:hover{
+    background: #b32424;
+    color: white;
+    cursor: pointer;
 }
 .titlewe{
   margin:20px;
@@ -136,7 +148,7 @@ code {
  
 }
 .subscribe{
-  border-top:1px solid  burlywood;
+  border-top:1px solid  #deb88742;
   width: 90%;
   margin-left: 20px;
   margin-top:20px;
@@ -166,8 +178,7 @@ code {
 }
 
 .linkdin{
-  background-color: #0073b1!important;
-  color:#fff;
+ color: #0b3d73;;
  padding-left: 10px;
  padding-right: 10px;
 }
@@ -184,18 +195,23 @@ code {
   border-bottom: 0;
 }
 .subscriberbyemail{
-  margin-left: 5px;
-  background: #de0606;
-  color:#fff;
-  border:none;
-  padding: 4px;
-  font-weight: 600;
-  letter-spacing: 2px;
+    margin-left: 32%;
+    background: #de0606;
+    color: #fff;
+    border: none;
+    padding: 4px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 17px;
 }
 .widget-content ul li{
   list-style: none;
   display: inline;
   padding-left: 10px;
+}
+
+.widget-content ul{
+  margin-left: -31px !important;
 }
 
 

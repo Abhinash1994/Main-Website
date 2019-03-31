@@ -17,7 +17,6 @@ router.get('/test',(req,res)=>{
         page: parseInt(page, 10),
         
     }
-    console.log(res.options)
 	blogData.paginate({},options).then((data)=>{
 		res.send({data});
 	}, (e) => {

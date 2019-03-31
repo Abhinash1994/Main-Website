@@ -18,7 +18,7 @@ const BloggingSchema = new Schema({
 		required:true
 	},
 	createdAt: { 
-		type: Date, default: Date.now,
+		type: Date, default: Date,
 	},
 	blogImages:{
 		type: String,

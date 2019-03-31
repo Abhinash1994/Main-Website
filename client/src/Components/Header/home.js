@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { SocialIcon } from 'react-social-icons';
 import Grid from '@material-ui/core/Grid';
 import Pagination from "react-js-pagination";
+import Moment from 'react-moment';
 import axios from 'axios';
 class Home extends Component {
 
@@ -43,7 +44,7 @@ class Home extends Component {
     
     this.handlePageChange();
   }
- 
+
   render() {
 
           if(this.state.loading){
@@ -57,23 +58,30 @@ class Home extends Component {
 
     return (
           
-            <Grid container>
+            <Grid container className="homecontainer">
  
                  <Grid item lg={2}>
                   </Grid>
-                  <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={6} style={{borderRight: '1px solid #d86a6a',background:'#fff'}}>
+                  <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
                           
                         {this.state.postData.map(function(item, index) {
                                return (
 
 
-                                             <div className="header" key={index}>
-                                                <h3>{item.title}</h3>
+                                             <div className="header" key={index} style={index%2==0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
+                                                <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
+
+
+                                                <h3 className="titled">{item.title }</h3>
                                                   <div className="socialmessage">
                                                       <ul>
                                                         <li className="message"><img src="./Images/comment.png"/></li>
                                                         <li>10 comments - Abhinash kumar</li>
-                                                        <li><span className="linkdin">share</span></li>
+                                                        <li><span className="linkdin">
+
+                                                                 <img src="https://res.cloudinary.com/ddkyepakx/image/upload/v1554063596/linkedIn_PNG32.png"style={{width:'3%'}}/><span style={{paddingLeft:'2.5px'}}>share</span>
+                                                          </span>
+                                                        </li>
                                                         <li>twiter</li>
                                                       </ul>
                                                   </div>
@@ -93,7 +101,7 @@ class Home extends Component {
 
                   </Grid>
 
-                  <Grid className="profileSide" item xs={12} sm={12} md={4} lg={4}>
+                  <Grid className="profileSide" item xs={12} sm={12} md={4} lg={3}>
 
                          <div className="aboutme">
                                 <img alt="myimage" className="face" src="./Images/profile.jpg" />
@@ -103,7 +111,7 @@ class Home extends Component {
                                 <h6><b>Lives in Delhi , India</b> </h6>
                                 <h6>pandit.bechu@gmail.com</h6>
                             </div>
-                            <div className="widget"><a href="https://github.com/Abhinash1994" className="btn" aria-label="Follow @Abhinash1994 on GitHub"><svg version="1.1" width="14" height="14" viewBox="0 0 16 16" class="octicon octicon-mark-github" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg> <span>Follow Me on GitHub @Abhinash1994</span></a></div>
+                           
                             
                             <div className="subscribe">
                                 <div className="widget-title">
@@ -118,7 +126,7 @@ class Home extends Component {
                             <div className="subscribe">
                                 <div className="widget-title">
                                   <h3 className="title">
-                                    Socila Icons
+                                    Social Icons
                                   </h3>
                                 </div>
                                 <div class="widget-content">
@@ -140,8 +148,14 @@ class Home extends Component {
                           </div>
 
                   </Grid>
-                    <div className="d-flex justify-content-center">
-                           <Pagination
+                    <Grid container>
+
+                          <Grid item xs={4} lg={4}>
+
+                          </Grid>
+
+                          <Grid item xs={4} lg={4} style={{marginTop:'4%'}}>
+                              <Pagination
                             hideFirstLastPages
                             activePage={this.state.activePage}
                             itemsCountPerPage={this.state.itemsCountPerPage}
@@ -151,8 +165,15 @@ class Home extends Component {
                             linkClass='page-link'
                             onChange={this.handlePageChange}
                           />
+                          </Grid>
+                          <Grid item xs={4} lg={4}>
 
-                    </div>
+                          </Grid>
+
+                    </Grid>
+                           
+
+                    
                      
 
             </Grid>
