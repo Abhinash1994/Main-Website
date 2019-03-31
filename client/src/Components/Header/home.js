@@ -5,23 +5,55 @@ import Pagination from "react-js-pagination";
 import axios from 'axios';
 class Home extends Component {
 
-  state = {
-    postData: [],
-    activePage: 15
-  }
-  componentDidMount() {
-    axios.get('/api/blog/test')
+
+   constructor(props) {
+      super(props);
+          this.state = {
+            postData: [],
+            activePage: 1,
+            itemsCountPerPage:1,
+            totalItemsCount:1,
+            pageRangeDisplayed:4,
+            loading:false
+          };
+          this.handlePageChange=this.handlePageChange.bind(this);
+
+      }
+
+  handlePageChange(pageNumber) {
+    this.setState({
+      postData:[],
+      loading:true
+    })
+    axios.get('/api/blog/test?page='+pageNumber)
       .then(res => {
         this.setState({
           isLoaded: true,
-          postData: res.data.data
+          postData: res.data.data.docs,
+          loading:false,
+          itemsCountPerPage:res.data.data.limit,
+          totalItemsCount:res.data.data.total,
+          activePage:res.data.data.page
         });
         console.log("final data",this.state.postData)
       })
   }
 
+  componentDidMount() {
+    
+    this.handlePageChange();
+  }
  
   render() {
+
+          if(this.state.loading){
+            return(
+              
+              <p>loading...</p>
+
+              )
+          }
+
 
     return (
           
@@ -47,7 +79,7 @@ class Home extends Component {
                                                   </div>
 
 
-                                                    <div className="bigInt" itemprop="description">
+                                                    <div className="bigInt">
                                                       {item.comment}
                                                     </div>
                                                     <div className="cen">
@@ -108,6 +140,21 @@ class Home extends Component {
                           </div>
 
                   </Grid>
+                    <div className="d-flex justify-content-center">
+                           <Pagination
+                            hideFirstLastPages
+                            activePage={this.state.activePage}
+                            itemsCountPerPage={this.state.itemsCountPerPage}
+                            totalItemsCount={this.state.totalItemsCount}
+                            pageRangeDisplayed={this.state.pageRangeDisplayed}
+                            itemClass='page-item'
+                            linkClass='page-link'
+                            onChange={this.handlePageChange}
+                          />
+
+                    </div>
+                     
+
             </Grid>
 
             

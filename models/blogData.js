@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
 const Schema = mongoose.Schema;
 
 const BloggingSchema = new Schema({
@@ -29,5 +30,5 @@ const BloggingSchema = new Schema({
 		required:true
 	},
 })
-
+BloggingSchema.plugin(mongoosePaginate);
 module.exports = blogData = mongoose.model('bloggingdata',BloggingSchema);

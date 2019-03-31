@@ -12,7 +12,13 @@ const upload  = require('../../models/multer')
 
 
 router.get('/test',(req,res)=>{
-	blogData.find().then((data)=>{
+	const { page, perPage } = req.query;
+      const options = {
+        page: parseInt(page, 10),
+        
+    }
+    console.log(res.options)
+	blogData.paginate({},options).then((data)=>{
 		res.send({data});
 	}, (e) => {
 		res.status(400).send(e);
