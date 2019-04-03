@@ -5,17 +5,19 @@ class Details extends Component {
 	 constructor(props) {
       super(props);
           this.state = {
+            id:null,
             postData: [],
-            
             loading:false
           };
 
       }
 
-  
-
   componentDidMount() {
-    axios.get('/api/blog/test?')
+    let id =this.props.match.params.post_id;
+    this.setState({
+      id:id
+    })
+    axios.get('/api/blog/test'+id)
       .then(res => {
         this.setState({
           isLoaded: true,
@@ -29,7 +31,7 @@ class Details extends Component {
   render() {
     return (
         <div className="container">
-          <h1> details</h1>
+          <h1> {this.state.id}</h1>
         </div>
             
        

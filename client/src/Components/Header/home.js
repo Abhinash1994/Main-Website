@@ -64,12 +64,12 @@ class Home extends Component {
                  <Grid item lg={2}>
                   </Grid>
                   <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
-                         <Link to="/detail-post">
+                         
                         {this.state.postData.map(function(item, index) {
                                return (
 
-
-                                             <div className="header" key={index} style={index%2===0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
+                                  <Link to={'/'+ item._id}>
+                                             <div className="header" key={index._id} style={index%2===0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
                                                 <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
 
 
@@ -95,10 +95,11 @@ class Home extends Component {
                                                       <img alt="Angular  Route Guards with Child Components " className="bec650" itemprop="image" src={item.blogImages}/>
                                                     </div>
                                               </div>
+                                              </Link>
                                             )
                                          })
                                       }
-                                </Link>
+                                
 
                   </Grid>
 

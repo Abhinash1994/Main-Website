@@ -20,7 +20,7 @@ export default class Main extends Component {
               <Route exact path='/node' component={Nodejs}/>
               <Route exact path='/request/tutorial' component={Tutorial}/>
               <Route exact path='/add-post' component={Addposts}/>
-              <Route exact path='/detail-post' component={Details}/>
+              <Route exact path='/:post_id' component={Details}/>
 		    </Switch>
   		</main>
     );
