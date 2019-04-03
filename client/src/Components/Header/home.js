@@ -68,7 +68,7 @@ class Home extends Component {
                                return (
 
 
-                                             <div className="header" key={index} style={index%2==0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
+                                             <div className="header" key={index} style={index%2===0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
                                                 <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
 
 
