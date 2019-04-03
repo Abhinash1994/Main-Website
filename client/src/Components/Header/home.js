@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Pagination from "react-js-pagination";
 import Moment from 'react-moment';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 class Home extends Component {
 
 
@@ -59,16 +60,16 @@ class Home extends Component {
     return (
           
             <Grid container className="homecontainer">
- 
+               
                  <Grid item lg={2}>
                   </Grid>
                   <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
-                          
+                         <Link to="/detail-post">
                         {this.state.postData.map(function(item, index) {
                                return (
 
 
-                                             <div className="header" key={index} style={index%2==0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
+                                             <div className="header" key={index} style={index%2===0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
                                                 <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
 
 
@@ -97,7 +98,7 @@ class Home extends Component {
                                             )
                                          })
                                       }
-
+                                </Link>
 
                   </Grid>
 
@@ -122,7 +123,7 @@ class Home extends Component {
                                    <input className="typeEmail" style={{padding:'2px'}} type="text" placeholder="Enter your email"/>
                                    <button className="subscriberbyemail" type="submit">Susbscribe</button>
                             </div>
-                            {/* <hr style={{border:'0.3px solid burlywood',width:'90%'}} /> */}
+                             <hr style={{border:'0.3px solid burlywood',width:'90%'}} />
                             <div className="subscribe">
                                 <div className="widget-title">
                                   <h3 className="title">
@@ -172,9 +173,6 @@ class Home extends Component {
 
                     </Grid>
                            
-
-                    
-                     
 
             </Grid>
 
