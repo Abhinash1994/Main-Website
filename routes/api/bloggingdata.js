@@ -24,6 +24,14 @@ router.get('/test',(req,res)=>{
 	});
 });
 
+router.get('/test/data/:id',(req,res)=>{
+	blogData.findById(req.params.id).then((data)=>{
+		res.send({data});
+	}, (e) => {
+		res.status(400).send(e);
+	});
+});
+
 router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
 	const result = await cloudinary.v2.uploader.upload(req.file.path);
 	var data = new blogData({

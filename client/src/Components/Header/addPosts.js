@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
+import CKEditor from 'ckeditor4-react';
 class Addposts extends Component {
 
     constructor(props) {
@@ -9,7 +10,7 @@ class Addposts extends Component {
         this.state = {
             title: '',
             categories:'',
-            comment:'',
+            content: '',
             date:'',
             selectedFile:null,
             author:'',
@@ -17,7 +18,8 @@ class Addposts extends Component {
         // this.fileInput = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleCategories = this.handleCategories.bind(this);
-        this.handleComment = this.handleComment.bind(this);
+        this.updateContent = this.updateContent.bind(this);
+        this.onEditorChange = this.onEditorChange.bind(this);
         this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
         this.handleDate = this.handleDate.bind(this);
         this.handleAuthor = this.handleAuthor.bind(this);
@@ -33,11 +35,24 @@ class Addposts extends Component {
       handleChange(event) {
         this.setState({title: event.target.value});
       }
-    
-     handleComment(event) {
-        this.setState({comment: event.target.value});
-      }
+
+
         
+         updateContent(e) {
+               this.setState( {
+                   content: e.target.value
+               } );
+          }
+            onEditorChange( evt ) {
+                this.setState( {
+                    content: evt.editor.getData()
+                } );
+            }
+
+
+
+
+
       handleDate(e) {
         this.setState({date: e.target.value});
       }  
@@ -51,11 +66,10 @@ class Addposts extends Component {
       handleSubmit(e) {
         
         e.preventDefault();
-
       const formData = new FormData();
         formData.append('title',this.state.title);
         formData.append('categories',this.state.categories);
-        formData.append('comment',this.state.comment);
+        formData.append('comment',this.state.content);
         formData.append('createdAt',this.state.date);
         formData.append('blogImages',this.state.selectedFile);
          formData.append('author',this.state.author);
@@ -64,8 +78,9 @@ class Addposts extends Component {
                 'content-type': 'multipart/form-data'
             }
         };
-
+   
         let instance = this;
+       
         axios.post('/api/blog/checkpost',formData,config).then(function (response) {
             alert('Form Submitted, We will get in touch with you shortly!');
             instance.setState({formData});
@@ -81,7 +96,7 @@ class Addposts extends Component {
       }
 
   render() {
-
+    
     return (
         
             <Grid container spacing={24}>
@@ -110,8 +125,12 @@ class Addposts extends Component {
                         </div>
                         <div className="form-group titlewe">
                             <h1  style={{paddingTop:'10px',fontSize:'20px'}}>body : </h1>
-                            <textarea className="form-control" rows="5" id="comment" placeholder="comment" 
-                            value={this.state.comment} onChange={this.handleComment}></textarea>
+                              
+                            <CKEditor
+                            content={this.state.content}
+                            onChange={this.onEditorChange} />
+                            
+                 
                         </div>
                         <div className="form-group titlewe">
                             <h1  style={{paddingTop:'10px',fontSize:'20px'}}>Images : </h1>
@@ -140,5 +159,7 @@ class Addposts extends Component {
     );
   }
 }
+
+
 
 export default Addposts;
