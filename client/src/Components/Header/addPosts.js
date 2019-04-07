@@ -10,6 +10,7 @@ class Addposts extends Component {
         this.state = {
             title: '',
             categories:'',
+            body:'',
             content: '',
             date:'',
             selectedFile:null,
@@ -17,6 +18,7 @@ class Addposts extends Component {
         };
         // this.fileInput = React.createRef();
         this.handleChange = this.handleChange.bind(this);
+         this.handleBody = this.handleBody.bind(this);
         this.handleCategories = this.handleCategories.bind(this);
         this.updateContent = this.updateContent.bind(this);
         this.onEditorChange = this.onEditorChange.bind(this);
@@ -36,7 +38,9 @@ class Addposts extends Component {
         this.setState({title: event.target.value});
       }
 
-
+       handleBody(event) {
+        this.setState({body: event.target.value});
+      }
         
          updateContent(e) {
                this.setState( {
@@ -69,6 +73,7 @@ class Addposts extends Component {
       const formData = new FormData();
         formData.append('title',this.state.title);
         formData.append('categories',this.state.categories);
+        formData.append('body',this.state.body);
         formData.append('comment',this.state.content);
         formData.append('createdAt',this.state.date);
         formData.append('blogImages',this.state.selectedFile);
@@ -121,6 +126,11 @@ class Addposts extends Component {
                                 <option value="nodejs">nodejs</option>
                                 <option value="tutotial">tutotial</option>
                             </select>
+                            
+                        </div>
+                        <div className="form-group titlewe">
+                            <h1  style={{paddingTop:'10px',fontSize:'20px'}}>ContentPost : </h1>
+                            <textarea className="form-control" rows="3" value={this.state.body} onChange={this.handleBody}></textarea>  
                             
                         </div>
                         <div className="form-group titlewe">

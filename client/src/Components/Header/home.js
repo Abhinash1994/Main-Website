@@ -74,7 +74,7 @@ class Home extends Component {
 
                                                 <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
 
-                                                <Link to={'/'+ item._id}>
+                                                <Link to={'/questions/'+ item._id+'/'+item.title}>
                                                   <h3 className="titled">{item.title }</h3>
                                                 </Link>
                                                   <div className="socialmessage">
@@ -89,7 +89,10 @@ class Home extends Component {
                                                         <li>twiter</li>
                                                       </ul>
                                                   </div>
-
+                                                  <div className="bigInt" >
+                                                      
+                                                       {item.body}
+                                                    </div>
 
                                                     <div className="bigInt" >
                                                       

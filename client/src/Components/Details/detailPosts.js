@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 class Details extends Component {
 
@@ -20,7 +21,7 @@ class Details extends Component {
         this.setState({
           isLoaded: true,
           postData: res.data.data,
-          
+          id:id
         });
         console.log("detail",this.state.postData)
       })
@@ -29,13 +30,17 @@ class Details extends Component {
        });
   }
   render() {
+    console.log(this.props)
     let data=this.state.postData;
     return (
-       <Grid container className="homecontainer">
-
-        
-          <h1>{data.title}</h1>
-          <h1>{data.author}</h1>
+       <Grid container>
+            <Grid item lg={2}></Grid>
+            <Grid item lg={8}>
+                <Paper>
+                    hey
+                </Paper>
+            </Grid>
+            <Grid item lg={2}></Grid>
 
        </Grid>
             
