@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Pagination from "react-js-pagination";
 import Moment from 'react-moment';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 class Home extends Component {
@@ -62,56 +63,37 @@ class Home extends Component {
           
             <Grid container className="homecontainer">
                
-                 <Grid item lg={2}>
+                 <Grid item lg={1}>
                   </Grid>
-                  <Grid className="contentWrite" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
+                  <Grid className="singlePost" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
                          
-                        {this.state.postData.map(function(item, index) {
+                        {this.state.postData.map(function(data, index) {
                                return (
 
-                                  
-                                             <div className="header" key={index._id} style={index%2===0?{background:'#fffafa',marginTop:'15px'}:{background:'#f7f7f7',marginTop:'20px'}}>
+                                  <header className="entry-header">
+                                    <Link to={'/questions/'+ data._id+'/'+data.title}>
+                                        <h1 className="entry-title" itemprop="headline">{data.title}</h1>
+                                    </Link>
+                                      <p className="entry-meta">
+                                          <span  itemprop="dateModified" className="entry-time"><Moment format="D MMM YYYY" withTitle>{data.createdAt}</Moment></span> 
+                                             <span className="entry-author-name" itemprop="name">{data.author}</span> 
+                                             <span className="entry-comments-link">6 Comments</span></p>
+                                
+                                    <p>{data.body}</p>
+                                    <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title="Best Email marketing Services &amp; Software" src={data.blogImages}/> </p>
 
-                                                <h6 style={{color:'#aba9a9'}}><Moment format="D MMM YYYY" withTitle>{item.createdAt}</Moment></h6>
-
-                                                <Link to={'/questions/'+ item._id+'/'+item.title}>
-                                                  <h3 className="titled">{item.title }</h3>
-                                                </Link>
-                                                  <div className="socialmessage">
-                                                      <ul>
-                                                        <li className="message"><img src="./Images/comment.png"/></li>
-                                                        <li>10 comments - Abhinash kumar</li>
-                                                        <li><span className="linkdin">
-
-                                                                 <img src="https://res.cloudinary.com/ddkyepakx/image/upload/v1554063596/linkedIn_PNG32.png"style={{width:'3%'}}/><span style={{paddingLeft:'2.5px'}}>share</span>
-                                                          </span>
-                                                        </li>
-                                                        <li>twiter</li>
-                                                      </ul>
-                                                  </div>
-                                                  <div className="bigInt" >
-                                                      
-                                                       {item.body}
-                                                    </div>
-
-                                                    <div className="bigInt" >
-                                                      
-                                                       <EditorPreview comment={item.comment} />
-                                                    </div>
-                                                    <div className="cen">
-                                                      <img alt="Angular  Route Guards with Child Components " className="bec650" itemprop="image" src={item.blogImages}/>
-                                                    </div>
-                                              </div>
+                                      <p><EditorPreview comment={data.comment} /></p>      
+                                  </header>                             
                                               
-                                            )
-                                         })
-                                      }
+                                      )
+                                    })
+                                  }
                                 
 
                   </Grid>
 
                   <Grid className="profileSide" item xs={12} sm={12} md={4} lg={3}>
-
+                      <Paper>
                          <div className="aboutme">
                                 <img alt="myimage" className="face" src="./Images/profile.jpg" />
                                 <h5>Abhinash kumar </h5>
@@ -155,6 +137,8 @@ class Home extends Component {
                                 </h3>
                                 </div>
                           </div>
+
+                          </Paper>
 
                   </Grid>
                     <Grid container>
