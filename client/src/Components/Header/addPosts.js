@@ -15,9 +15,13 @@ class Addposts extends Component {
             date:'',
             selectedFile:null,
             author:'',
+            slug:'',
+            tag:''
         };
         // this.fileInput = React.createRef();
         this.handleChange = this.handleChange.bind(this);
+        this.handleSlug = this.handleSlug.bind(this);
+        this.handleTag = this.handleTag.bind(this);
          this.handleBody = this.handleBody.bind(this);
         this.handleCategories = this.handleCategories.bind(this);
         this.updateContent = this.updateContent.bind(this);
@@ -37,7 +41,12 @@ class Addposts extends Component {
       handleChange(event) {
         this.setState({title: event.target.value});
       }
-
+      handleSlug(event) {
+        this.setState({slug: event.target.value});
+      }
+      handleTag(event) {
+        this.setState({tag: event.target.value});
+      }
        handleBody(event) {
         this.setState({body: event.target.value});
       }
@@ -68,7 +77,7 @@ class Addposts extends Component {
       }
 
       handleSubmit(e) {
-        
+         
         e.preventDefault();
       const formData = new FormData();
         formData.append('title',this.state.title);
@@ -77,7 +86,9 @@ class Addposts extends Component {
         formData.append('comment',this.state.content);
         formData.append('createdAt',this.state.date);
         formData.append('blogImages',this.state.selectedFile);
-         formData.append('author',this.state.author);
+        formData.append('author',this.state.author);
+        formData.append('slug',this.state.slug);
+        formData.append('tag',this.state.tag);
         const config = {
             headers: {
                 'content-type': 'multipart/form-data'
@@ -158,6 +169,17 @@ class Addposts extends Component {
                                 <option value="Abhinash">Abhinash</option>
                                 <option value="Kumar">Kumar</option>
                             </select>
+                        </div>
+                        <div className="form-group titlewe">
+                            <h1 style={{paddingTop:'10px',fontSize:'20px'}}>URL/Slug : </h1>
+                            <input type="text" className="form-control" name="title"
+                            placeholder="slug"
+                            value={this.state.slug} onChange={this.handleSlug}
+                            />
+                        </div>
+                        <div className="form-group titlewe">
+                            <h1  style={{paddingTop:'10px',fontSize:'20px'}}>Tags : </h1>
+                            <textarea className="form-control" rows="3" value={this.state.tag} onChange={this.handleTag}></textarea>  
                         </div>
                         <button type="submit" className="btn btn-primary" style={{marginTop:'10px',marginBottom:'30px',marginLeft:'20px'}} value="Submit" >Send Data</button>
                         

@@ -41,7 +41,9 @@ router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
 		comment:req.body.comment,
 		createdAt:req.body.createdAt,
 		blogImages:result.secure_url,
-		author:req.body.author
+		author:req.body.author,
+		slug:req.body.slug,
+		tag:req.body.tag,
 	});
 	console.log("final",data)
 	data.save().then((doc)=>{

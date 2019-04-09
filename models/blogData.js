@@ -33,6 +33,14 @@ const BloggingSchema = new Schema({
 		type: String,
 		required:true
 	},
+	slug:{
+		type: String,
+		required:true
+	},
+	tag:{
+		type: String,
+		required:true
+	},
 })
 BloggingSchema.plugin(mongoosePaginate);
 module.exports = blogData = mongoose.model('bloggingdata',BloggingSchema);
