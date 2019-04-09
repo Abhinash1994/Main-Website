@@ -63,15 +63,15 @@ class Home extends Component {
           
             <Grid container className="homecontainer">
                
-                 <Grid item lg={1}>
+                 <Grid item lg={1} xl={1}>
                   </Grid>
-                  <Grid className="singlePost" item xs={12} sm={12} md={8} lg={7} style={{borderRight: '1px solid #deb88742'}}>
+                  <Grid className="singlePost" item xs={12} sm={6} md={12} lg={7} xl={7} style={{borderRight: '1px solid #deb88742'}}>
                          
                         {this.state.postData.map(function(data, index) {
                                return (
 
                                   <header className="entry-header">
-                                    <Link to={'/questions/'+ data._id+'/'+data.title}>
+                                    <Link to={'/questions/'+ data._id+'/'+data.slug+'/'}>
                                         <h1 className="entry-title" itemprop="headline">{data.title}</h1>
                                     </Link>
                                       <p className="entry-meta">
@@ -80,9 +80,9 @@ class Home extends Component {
                                              <span className="entry-comments-link">6 Comments</span></p>
                                 
                                     <p>{data.body}</p>
-                                    <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title="Best Email marketing Services &amp; Software" src={data.blogImages}/> </p>
+                                    <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title="{data.title}" src={data.blogImages}/> </p>
 
-                                      <p><EditorPreview comment={data.comment} /></p>      
+
                                   </header>                             
                                               
                                       )
@@ -92,7 +92,7 @@ class Home extends Component {
 
                   </Grid>
 
-                  <Grid className="profileSide" item xs={12} sm={12} md={4} lg={3}>
+                  <Grid className="profileSide" item xs={12} sm={6} md={5} lg={3} xl={3}>
                       <Paper>
                          <div className="aboutme">
                                 <img alt="myimage" className="face" src="./Images/profile.jpg" />
@@ -173,23 +173,5 @@ class Home extends Component {
   }
 }
 
-class EditorPreview extends Component {
-    render() {
-        return (
-            <div className="editor-preview">
-                
-                <div dangerouslySetInnerHTML={ { __html: this.props.comment } }></div>
-            </div>
-        );
-    }
-}
-
-EditorPreview.defaultProps = {
-    comment: ''
-};
-
-EditorPreview.propTypes = {
-    comment: PropTypes.string
-};
 
 export default Home;

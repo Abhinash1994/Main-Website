@@ -186,6 +186,12 @@ code {
   border-right: 0 solid #e51515;
   border-bottom: 0;
 }
+.contentblock{
+  background: #2f1e2e;
+      border-left: 5px solid #38bb6c;
+  color:#fff;
+  padding:20px;
+}
 .subscriberbyemail{
     margin-left: 32%;
     background: #de0606;
@@ -222,6 +228,7 @@ code {
     padding: 1px 7px;
     font-family: graphikweb-regular;
     vertical-align: top;
+    margin-top: 20px;
   }
   .entry-author-name{
     padding-left: 5px;
@@ -373,3 +380,11 @@ section .section-title {
     margin-bottom: 10px;
   }
 }
+
+@media (min-width:1366px) and (max-width:1920px){
+  .singlePost {
+     margin-left: 0% !important; 
+  }
+}
+
+
