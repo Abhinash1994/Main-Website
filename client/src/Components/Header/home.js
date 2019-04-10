@@ -6,7 +6,6 @@ import Moment from 'react-moment';
 import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
 class Home extends Component {
 
 
@@ -71,7 +70,7 @@ class Home extends Component {
                                return (
 
                                   <header className="entry-header">
-                                    <Link to={'/questions/'+ data._id+'/'+data.slug+'/'}>
+                                    <Link to={'/questions/'+ data._id+'/'+data.slug}>
                                         <h1 className="entry-title" itemprop="headline">{data.title}</h1>
                                     </Link>
                                       <p className="entry-meta">

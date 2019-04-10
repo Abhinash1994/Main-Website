@@ -15,6 +15,7 @@ router.get('/test',(req,res)=>{
 	const { page, perPage } = req.query;
       const options = {
         page: parseInt(page, 10),
+        sort: {'_id': -1},
         
     }
 	blogData.paginate({},options).then((data)=>{

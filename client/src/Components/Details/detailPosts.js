@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import axios from 'axios';

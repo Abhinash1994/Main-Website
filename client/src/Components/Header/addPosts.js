@@ -131,11 +131,11 @@ class Addposts extends Component {
                             <h1 style={{paddingTop:'10px',fontSize:'20px'}}>Categories : </h1>
                             <select  className="form-control" value={this.state.categories} onChange={this.handleCategories}>
                                 <option value="select">Select an Option</option>
-                                <option value="javascript">javascript</option>
-                                <option value="angularjs">angularjs</option>
-                                <option value="reactjs">reactjs</option>
-                                <option value="nodejs">nodejs</option>
-                                <option value="tutotial">tutotial</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Angularjs">Angularjs</option>
+                                <option value="Reactjs">Reactjs</option>
+                                <option value="Nodejs">Nodejs</option>
+                                <option value="Tutotial">Tutotial</option>
                             </select>
                             
                         </div>
@@ -166,8 +166,8 @@ class Addposts extends Component {
                             <h1 style={{paddingTop:'10px',fontSize:'20px'}}>Author : </h1>
                             <select  className="form-control" value={this.state.author} onChange={this.handleAuthor}>
                                 <option value="select">Select an Option</option>
-                                <option value="Abhinash">Abhinash</option>
-                                <option value="Kumar">Kumar</option>
+                                <option value="Abhinash">By Abhinash Kumar</option>
+                                <option value="Kumar">Bechu Kumar</option>
                             </select>
                         </div>
                         <div className="form-group titlewe">
