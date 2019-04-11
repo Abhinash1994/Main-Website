@@ -39,7 +39,7 @@ router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
 		title:req.body.title,
 		categories:req.body.categories,
 		body:req.body.body,
-		comment:req.body.comment,
+		paragraph:req.body.paragraph,
 		createdAt:req.body.createdAt,
 		blogImages:result.secure_url,
 		author:req.body.author,

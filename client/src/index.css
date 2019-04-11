@@ -187,10 +187,14 @@ code {
   border-bottom: 0;
 }
 .contentblock{
-  background: #2f1e2e;
+  /*background: #2f1e2e;
       border-left: 5px solid #38bb6c;
   color:#fff;
-  padding:20px;
+  padding:20px;*/
+      background: #f5eaea;
+    border-left: 5px solid #dc0822;
+    color: #000;
+    padding: 20px;
 }
 .subscriberbyemail{
     margin-left: 32%;
@@ -265,7 +269,7 @@ code {
     overflow: hidden;
     display: block;
     position: relative;
-    text-align: justify;
+    
 }
 .singlePost  p img {
     height: auto;
@@ -371,7 +375,63 @@ section .section-title {
   background-color: #bd0303;
 }
   
-
+.commentbox{
+  background: #fff;
+  margin-top: 5%;
+}
+.commentbox .person{
+  font-size: 100px;
+}
+#thrive-comments .tcm-comments-create .tcm-create-post-container .right, #thrive-comments .tcm-create-comment-fields .tcm-create-post-container .right, #thrive-comments .tcm-lazy-comments .tcm-create-post-container .right {
+    flex-grow: 1;
+    transition: all 3s;
+}
+.thrive-comments textarea {
+    min-height: 105px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #393939;
+    padding: 18px 20px 20px;
+    transition: height 0s;
+    resize: vertical;
+}
+.thrive-comments textarea, .thrive-comments input {
+    background-color: #f6f7f8;
+    border: 1px solid #c8cacb;
+    box-shadow: inset 0 0 3px #d5d7d8;
+    border-radius: 5px;
+    transition: all .3s;
+    font-family: inherit;
+    outline: none;
+}
+.thrive-comments input {
+    height: 45px;
+    padding: 0 20px;
+    font-size: 17px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 20px;
+}
+#submit-comment{
+      background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 35px;
+    height: 35px;
+    padding: 0 20px 0 35px;
+    border: 1px solid;
+    border-radius: 50px;
+    text-transform: none;
+    box-shadow: none;
+    transition: all .3s;
+    max-width: 200px;
+    font-family: inherit;
+    color: #dc2026;
+    border-color: #dc2026;
+}
 @media (max-width:767px){
   #footer h5 {
     padding-left: 0;

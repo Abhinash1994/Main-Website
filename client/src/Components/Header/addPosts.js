@@ -83,7 +83,7 @@ class Addposts extends Component {
         formData.append('title',this.state.title);
         formData.append('categories',this.state.categories);
         formData.append('body',this.state.body);
-        formData.append('comment',this.state.content);
+        formData.append('paragraph',this.state.content);
         formData.append('createdAt',this.state.date);
         formData.append('blogImages',this.state.selectedFile);
         formData.append('author',this.state.author);

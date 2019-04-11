@@ -34,6 +34,13 @@ class Details extends Component {
        });
   }
   render() {
+     if(this.state.loading){
+            return(
+              
+              <p>loading...</p>
+
+              )
+          }
     
     console.log(this.props)
     let data=this.state.postData;
@@ -51,9 +58,62 @@ class Details extends Component {
                 <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title={data.title} src={data.blogImages}/> </p>
 
                  <div className="contentblock">
-                    <p><EditorPreview comment={data.comment} /></p> 
+                    <p><EditorPreview comment={data.paragraph} /></p> 
                 </div>
                 
+                <div className="commentbox">
+                    <i className="material-icons person">
+                            person
+                     </i>
+                     
+                </div>
+               
+
+                 
+
+                  <div className="right">
+    <div className="tcm-post-input-container thrive-comments">
+     
+      <textarea className="mainInput" id="tcm-post-content" name="tcm-post-content" placeholder="Enter your comment..."></textarea>
+    </div>
+    <div class="tcm-comment-additional-fields" style={{display: 'block'}}>
+      <div class="inner clear-this">
+        
+        <div class="thrive-comments">
+          
+            <p>Comment as a guest:</p>
+           
+               <input id="tcm-guest-name" class="form-input" type="text" name="name" placeholder="Name"/>
+            <div class="tcm-error-message"></div>
+            <input id="tcm-guest-email" class="form-input" type="text" name="email" placeholder="Email"/>
+            
+          
+
+          <button class="save-btn tcm-truncate tcm-transparent tcm-border-color-ac-h" id="submit-comment" data-parent="0" data-level="0" type="submit">
+            Submit comment
+          </button>
+        </div>
+
+        
+        <div class="tcm-user-details">
+          
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
             </Grid>
             <Grid item lg={2}></Grid>
 
@@ -64,6 +124,7 @@ class Details extends Component {
             <meta property="og:title" content="website" />
         
           </MetaTags> 
+
        </Grid>
             
        

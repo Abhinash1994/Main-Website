@@ -17,7 +17,7 @@ const BloggingSchema = new Schema({
 		type:String,
 		required:true
 	},
-	comment:{
+	paragraph:{
 		type:String,
 		required:true
 	},
