@@ -2,13 +2,15 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const postdata = require('./routes/api/bloggingdata');
-const commentdata = require('./routes/api/commentData');
+const commentdata = require('./routes/api/commentStore');
 const app = express();
 
 //body parser middleware
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(bodyParser.json());
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 //DB config
 const db = require('./config/keys').mongoURI;
 

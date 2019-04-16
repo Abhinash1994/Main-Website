@@ -92,6 +92,12 @@ code {
   width: 100px;
   margin-left: 20px;
 }
+a{
+  text-decoration: none !important;
+}
+a:hover{
+  color: #b71c1c;
+}
 .aboutme h5{
   font-weight: 700;
   letter-spacing: 1px;
@@ -185,6 +191,10 @@ code {
   border-left: 15px solid #e51515;
   border-right: 0 solid #e51515;
   border-bottom: 0;
+}
+.linkwebsite:hover{
+  text-decoration: underline !important;
+  color:yellow !important;
 }
 .contentblock{
   /*background: #2f1e2e;

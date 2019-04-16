@@ -33,6 +33,8 @@ router.get('/test/data/:id',(req,res)=>{
 	});
 });
 
+
+
 router.post('/checkpost',upload.single('blogImages'), async (req,res)=>{
 	const result = await cloudinary.v2.uploader.upload(req.file.path);
 	var data = new blogData({

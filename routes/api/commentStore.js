@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const path = require("path");
 
-const commentDataStore =require('../../models/commentDataStore')
+const commentdata =require('../../models/commentData')
 
 
 router.get('/comment',(req,res)=>{
-	commentDataStore.find().then((data)=>{
+	commentdata.find().then((data)=>{
 		res.send({data});
 	}, (e) => {
 		res.status(400).send(e);
@@ -14,8 +14,8 @@ router.get('/comment',(req,res)=>{
 });
 
 
-router.post('/comment',(req,res)=>{
-	var data = new commentDataStore({
+router.post('/comment-data',(req,res)=>{
+	var data = new commentdata({
 		name:req.body.name,
 		gmail:req.body.gmail,
 		comment:req.body.comment

@@ -53,8 +53,8 @@ class Footer extends Component {
       </div>  
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-          <p><u><a href="#">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
-          <p className="h6">&copy All right Reversed.<a className="text-green ml-2" href="#" target="_blank">Sunlimetech</a></p>
+          <p><u><a href="#"></a></u> BeYondTechz @ 2019 <a href="#" className="linkwebsite">beyondtechz.com</a> Made in Nepal.</p>
+          <p className="h6">@ All rights reserved the content is copyrighted to Abhinash kumar pandit </p>
         </div>
         <hr/>
       </div>  

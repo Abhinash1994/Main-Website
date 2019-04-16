@@ -35,13 +35,24 @@ class Details extends Component {
       this.setState({comment:e.target.value});
   }
   handleSubmit(e) {
-         
         e.preventDefault();
-        console.log(this.state.name);
-        console.log(this.state.gmail);
-        console.log(this.state.comment);
-        alert("successful")
+        axios.post('/api/blog/comment-data',{
+              name:this.state.name,
+              gmail:this.state.gmail,
+              comment:this.state.comment,
+
+        }).then(function (response) {
+            console.log(response)
+            alert("successfull comment")
+            
+          })
+         .catch(function (error) {
+            console.log("error");
+             alert('not Submitted, error');
+          });
+
   }
+
   componentDidMount(pageNumber) {
     let id =this.props.match.params.post_id;
     axios.get('/api/blog/test/data/'+id)
@@ -67,6 +78,7 @@ class Details extends Component {
           }
   
     let data=this.state.postData;
+
     return (
        <Grid container>
         
