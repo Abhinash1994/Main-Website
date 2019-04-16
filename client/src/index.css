@@ -376,7 +376,6 @@ section .section-title {
 }
   
 .commentbox{
-  background: #fff;
   margin-top: 5%;
 }
 .commentbox .person{
@@ -387,6 +386,7 @@ section .section-title {
     transition: all 3s;
 }
 .thrive-comments textarea {
+    margin-top: 4%;
     min-height: 105px;
     width: 100%;
     box-sizing: border-box;
@@ -395,6 +395,7 @@ section .section-title {
     padding: 18px 20px 20px;
     transition: height 0s;
     resize: vertical;
+    background: #fff;
 }
 .thrive-comments textarea, .thrive-comments input {
     background-color: #f6f7f8;

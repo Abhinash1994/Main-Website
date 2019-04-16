@@ -12,12 +12,36 @@ class Details extends Component {
       super(props);
           this.state = {
             id:null,
+            name:'',
+            gmail:'',
+            comment:'',
             postData: [],
             loading:false
           };
+          this.handleName = this.handleName.bind(this);
+          this.handleGmail = this.handleGmail.bind(this);
+          this.handleComment = this.handleComment.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
+      } 
 
-      }
 
+  handleName(e){
+      this.setState({name:e.target.value});
+  }
+  handleGmail(e){
+      this.setState({gmail:e.target.value});
+  }
+  handleComment(e){
+      this.setState({comment:e.target.value});
+  }
+  handleSubmit(e) {
+         
+        e.preventDefault();
+        console.log(this.state.name);
+        console.log(this.state.gmail);
+        console.log(this.state.comment);
+        alert("successful")
+  }
   componentDidMount(pageNumber) {
     let id =this.props.match.params.post_id;
     axios.get('/api/blog/test/data/'+id)
@@ -41,8 +65,7 @@ class Details extends Component {
 
               )
           }
-    
-    console.log(this.props)
+  
     let data=this.state.postData;
     return (
        <Grid container>
@@ -58,61 +81,57 @@ class Details extends Component {
                 <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title={data.title} src={data.blogImages}/> </p>
 
                  <div className="contentblock">
-                    <p><EditorPreview comment={data.paragraph} /></p> 
+                    <p><EditorPreview paragraph={data.paragraph} /></p> 
                 </div>
                 
-                <div className="commentbox">
-                    <i className="material-icons person">
-                            person
-                     </i>
-                     
-                </div>
+                
                
+                <Grid container>
 
-                 
+                  <Grid item xs={3} lg={2}>
+                        <div className="commentbox">
+                            <i className="material-icons person">
+                                    person
+                             </i>
+                     
+                        </div>
+                  </Grid>
+                  <Grid item xs={10} lg={10}>
 
                   <div className="right">
-    <div className="tcm-post-input-container thrive-comments">
-     
-      <textarea className="mainInput" id="tcm-post-content" name="tcm-post-content" placeholder="Enter your comment..."></textarea>
-    </div>
-    <div class="tcm-comment-additional-fields" style={{display: 'block'}}>
-      <div class="inner clear-this">
-        
-        <div class="thrive-comments">
-          
-            <p>Comment as a guest:</p>
-           
-               <input id="tcm-guest-name" class="form-input" type="text" name="name" placeholder="Name"/>
-            <div class="tcm-error-message"></div>
-            <input id="tcm-guest-email" class="form-input" type="text" name="email" placeholder="Email"/>
-            
-          
+                      <div className="tcm-post-input-container thrive-comments">
+                       
+                        <textarea className="mainInput" id="tcm-post-content" name="tcm-post-content" placeholder="Enter your comment..." value={this.state.comment} onChange={this.handleComment}></textarea>
+                      </div>
+                        <div class="tcm-comment-additional-fields" style={{display: 'block'}}>
+                          <div class="inner clear-this">
+                            
+                            <div class="thrive-comments">
+                              
+                                <p>Comment as a guest:</p>
+                               
+                                   <input id="tcm-guest-name" className="form-input" type="text" name="name" placeholder="Name" value={this.state.name} onChange={this.handleName}/>
+                                <div class="tcm-error-message"></div>
+                                <input id="tcm-guest-email" className="form-input" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleGmail}/>
+                                
+                              
 
-          <button class="save-btn tcm-truncate tcm-transparent tcm-border-color-ac-h" id="submit-comment" data-parent="0" data-level="0" type="submit">
-            Submit comment
-          </button>
-        </div>
+                              <button className="save-btn tcm-truncate tcm-transparent tcm-border-color-ac-h" id="submit-comment" data-parent="0" data-level="0" type="submit" onClick={this.handleSubmit}>
+                                Submit comment
+                              </button>
+                            </div>
 
-        
-        <div class="tcm-user-details">
-          
-          
-        </div>
-        
-      </div>
-    </div>
-  </div>
+                            
+                          </div>
+                        </div>
+                      </div>
 
+                  </Grid>
 
+              </Grid>
+                 
 
-
-
-
-
-
-
-
+                  
 
             </Grid>
             <Grid item lg={2}></Grid>
@@ -136,18 +155,18 @@ class EditorPreview extends Component {
         return (
             <div className="editor-preview">
                 
-                <div dangerouslySetInnerHTML={ { __html: this.props.comment } }></div>
+                <div dangerouslySetInnerHTML={ { __html: this.props.paragraph } }></div>
             </div>
         );
     }
 }
 
 EditorPreview.defaultProps = {
-    comment: ''
+    paragraph: ''
 };
 
 EditorPreview.propTypes = {
-    comment: PropTypes.string
+    paragraph: PropTypes.string
 };
 
 

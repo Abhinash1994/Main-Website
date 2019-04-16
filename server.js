@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const postdata = require('./routes/api/bloggingdata');
+const commentdata = require('./routes/api/commentData');
 const app = express();
 
 //body parser middleware
@@ -20,6 +21,7 @@ app.get('/',(req,res)=>
 
 //use routes
 app.use('/api/blog',postdata);
+app.use('/api/blog',commentdata);
 
 app.listen(4000,function(){
 	console.log("Server is running 4000")
