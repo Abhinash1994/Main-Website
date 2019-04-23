@@ -71,15 +71,15 @@ class Home extends Component {
 
                                   <header className="entry-header">
                                     <Link to={'/questions/'+ data._id+'/'+data.slug}>
-                                        <h1 className="entry-title" itemprop="headline">{data.title}</h1>
+                                        <h1 className="entry-title">{data.title}</h1>
                                     </Link>
                                       <p className="entry-meta">
-                                          <span  itemprop="dateModified" className="entry-time"><Moment format="D MMM YYYY" withTitle>{data.createdAt}</Moment></span> 
-                                             <span className="entry-author-name" itemprop="name">{data.author}</span> 
+                                          <span   className="entry-time"><Moment format="D MMM YYYY" withTitle>{data.createdAt}</Moment></span> 
+                                             <span className="entry-author-name" >{data.author}</span> 
                                              <span className="entry-comments-link">6 Comments</span></p>
                                 
                                     <p>{data.body}</p>
-                                    <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title="{data.title}" src={data.blogImages}/> </p>
+                                    <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title="{data.title}" src={data.blogImages} alt="blogimg"/> </p>
 
 
                                   </header>                             
@@ -119,8 +119,8 @@ class Home extends Component {
                                     Social Icons
                                   </h3>
                                 </div>
-                                <div class="widget-content">
-                                  <ul class="social-counter social social-color">
+                                <div className="widget-content">
+                                  <ul className="social-counter social social-color">
                                       <li className="facebook"><SocialIcon url="http://facebook.com/jaketrent" /></li>
                                       <li className="instagram"><SocialIcon url="http://instagram.com/jaketrent" /></li>
                                       <li className="pinterest"><SocialIcon url="http://twitter.com/jaketrent" /></li>

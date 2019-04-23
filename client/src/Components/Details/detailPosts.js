@@ -24,7 +24,9 @@ class Details extends Component {
           this.handleSubmit = this.handleSubmit.bind(this);
       } 
 
-
+ handleNewComment(comment) {
+    console.log(comment.text);
+  }
   handleName(e){
       this.setState({name:e.target.value});
   }
@@ -69,6 +71,7 @@ class Details extends Component {
        });
   }
   render() {
+   
      if(this.state.loading){
             return(
               
@@ -90,7 +93,7 @@ class Details extends Component {
                 </header>
 
                 <p>{data.body}</p>  
-                <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title={data.title} src={data.blogImages}/> </p>
+                <p> <img className="aligncenter wp-image-294851 size-full lazyloaded" title={data.title} src={data.blogImages} alt="blogimg"/> </p>
 
                  <div className="contentblock">
                     <p><EditorPreview paragraph={data.paragraph} /></p> 
@@ -141,9 +144,7 @@ class Details extends Component {
                   </Grid>
 
               </Grid>
-                 
-
-                  
+      
 
             </Grid>
             <Grid item lg={2}></Grid>
