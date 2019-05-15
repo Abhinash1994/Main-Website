@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
 import { SocialIcon } from 'react-social-icons';
 import Grid from '@material-ui/core/Grid';
 import Pagination from "react-js-pagination";
