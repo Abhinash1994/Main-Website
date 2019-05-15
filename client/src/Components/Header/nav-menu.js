@@ -29,7 +29,7 @@ class Navmenu extends Component {
               <a className="nav-link" href="/request/tutorial">Request Tutorial</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/add-post">Add Posts</a>
+              <a className="nav-link" href="/add-post"></a>
             </li>
           </ul>
         </div>
