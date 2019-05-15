@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const postdata = require('./routes/api/bloggingdata');
 const commentdata = require('./routes/api/commentStore');
+const path require('path');
 const app = express();
 
 //body parser middleware
