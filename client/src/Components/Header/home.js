@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { SocialIcon } from 'react-social-icons';
 import Grid from '@material-ui/core/Grid';
 import Pagination from "react-js-pagination";
 import Moment from 'react-moment';
@@ -120,9 +121,10 @@ class Home extends Component {
                                 </div>
                                 <div className="widget-content">
                                   <ul className="social-counter social social-color">
-                                      
-
-                                      
+                                      <li className="facebook"><SocialIcon url="http://facebook.com/jaketrent" /></li>
+                                      <li className="instagram"><SocialIcon url="http://instagram.com/jaketrent" /></li>
+                                      <li className="pinterest"><SocialIcon url="http://twitter.com/jaketrent" /></li>
+                                      <li className="reddit"><SocialIcon url="http://reddit.com/jaketrent" /></li>
                                   </ul> 
                                 </div>
                             </div>
